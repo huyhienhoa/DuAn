@@ -30,6 +30,7 @@
                     <th>Bán chạy</th>
                     <th>Loại hàng</th>
                     <th>Thương hiệu</th>
+                    <th>Hình ảnh</th>
                     <th>Sửa</th>
                     <th>Xóa</th>
                 </tr>
@@ -47,8 +48,9 @@
                         <td>{{ $product->category->name }}</td>
 
                         <td><?=$product['branch']['name']; ?></td>
-                        <td><a href="#" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a></td>
-                        <td><a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a></td>
+                        <td><img src="/images/{{$product->image}}" width="100px"></td>
+                        <td><a href="{{route('edit',['id'=>$product->id])}}" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a></td>
+                        <td><a href="{{route('delete',['id'=>$product->id])}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a></td>
                     </tr>
                 @endforeach
             </table>

@@ -1,0 +1,33 @@
+.bx-wrapper .bx-pager {
+    bottom: -95px;
+}
+
+.bx-wrapper .bx-pager a {
+    border: solid #ccc 1px;
+    display: block;
+    margin: auto 5px;
+    margin-bottom: 0px;
+    padding: 3px;
+}
+.bx-pager {
+    margin-bottom: -70px;
+}
+
+.bx-pager-item {
+    width: 73px;
+    height: 73px;
+}
+.bx-wrapper .bx-pager a:hover,
+.bx-wrapper .bx-pager a.active {
+    border: solid #5280DD 1px;
+}
+
+.bx-wrapper {
+    margin-bottom: 120px;
+}
+
+@media only screen and (max-width: 405px) {
+    .bx-pager {
+        display: none;
+    }
+}

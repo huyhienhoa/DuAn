@@ -5,13 +5,14 @@
     <title>Form Add Product</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script src="/vendor/ckeditor/ckeditor/ckeditor.js"></script>
 
 </head>
 <body>
 <div class="container ">
     <h1 class="text-center text-danger">Thêm sản phẩm</h1>
         <form class="form-group" method="post" enctype="multipart/form-data">
+            {{--enctype="multipart/form-data"--}}
             {{csrf_field()}}
             <div class="row">
                <div class="col-md-4 col-md-offset-1">
@@ -74,7 +75,7 @@
                 <div class="col-md-offset-1 col-md-10">
                     <label for="images">Thêm ảnh
                     </label>
-                    <input type="file" name="images" value="images">
+                    <input type="file" name="product_image" id="images">
                 </div>
             </div>
             <br>
@@ -87,9 +88,9 @@
             <br>
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">
-                    {{--<script>--}}
-                        {{--CKEDITOR.replace( 'article-ckeditor' );--}}
-                    {{--</script>--}}
+                    <script>
+                        CKEDITOR.replace( 'description' );
+                    </script>
                     <label for="description">Mô tả chi tiết</label>
                     <textarea id="description" name="description" rows="7" class="form-control ckeditor" placeholder="mô tả sản phẩm..."></textarea>
                 </div>
