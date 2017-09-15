@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function listProduct(){
         $products = Product::with('category','branch')->get();
         return view('product.products',compact('products'));
