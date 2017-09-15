@@ -28,9 +28,7 @@ class CreateProductsTable extends Migration
             $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();
         });
-        Schema::table('products', function($table) {
-            $table->double('cost');
-        });
+
     }
 
     /**
@@ -41,8 +39,5 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
-        Schema::table('products', function($table) {
-            $table->dropColumm('cost');
-        });
     }
 }
