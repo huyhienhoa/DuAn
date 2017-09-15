@@ -37,11 +37,11 @@
                 <div class="col-sm-6 clearfix">
                     <div class="row">
                         <div class="col-sm-12" style="background-color: black; color: white">
-                            <div class="col-sm-12" style="margin: 20px">
+                            <div class="col-sm-12" style="margin: 5px">
                                 <h2>{{$product->name}}</h2>
                             </div>
-                            <div class="col-sm-8">
-                                Giá : <span><strong>{{$product->cost}}</strong></span>
+                            <div class="col-sm-7" style="margin: 0 0 10px 5px;">
+                                Giá : <span><strong><?=number_format($product->cost,0,'','.')." VNĐ"?></strong></span>
                             </div>
                             <div class="col-sm-4">
                                 <i class="glyphicon glyphicon-check"></i><span> Còn hàng</span>
@@ -50,27 +50,26 @@
                     </div>
                     <br>
                     <div class="row">
-                        <div class="col-sm-6" style="background-color: red; color: white; padding: 15px; border-radius: 5px">
-                            <span class="glyphicon glyphicon-shopping-cart" style="font-size: 30px; padding: 5px;"></span>
-                            <span style="font-size: 25px"><strong>Đặt Mua Ngay</strong></span>
+                        <div class="col-sm-6">
+                            <a href="{{route('muahang',['id'=>$product->id])}}" class="btn btn-success">
+                                <span class="glyphicon glyphicon-shopping-cart" style="font-size: 30px; padding: 5px;"></span>
+                                <span style="font-size: 25px"><strong>Đặt Mua Ngay</strong></span>
+                            </a>
                         </div>
-                        <div class="col-sm-6" style="background-color: #2e6da4; color: white; padding: 15px; border-radius: 5px">
-                            <span class="glyphicon glyphicon-phone" style="font-size: 32px; padding: 5px;"></span>
-                            <span style="font-size: 20px"><strong>Tư Vấn: 0167.6385</strong></span>
-                        </div>
+
                     </div>
                     <br>
                     <div class="row">
                         <div class="col-sm-12" style="background-color: #f29901; padding: 10px">
                             <div>
-                                <p class="text-center">Đặt Hàng Ngay</p>
+                                {{--<p class="text-center">Đặt Hàng Ngay</p>--}}
                                 <p class="text-center">Để lại số điện thoại, chúng tôi sẽ gọi lại ngay</p>
                             </div>
                             <form>
                                 <div class="form-group row">
                                     <div class="col-sm-10">
                                         <label class="sr-only" for="sdt">Số Điện Thoại</label>
-                                        <input class="form-control" type="text" name="sdt" id="sdt" placeholder="Nhập số điện thoại để đặt hàng trước">
+                                        <input class="form-control" type="text" name="sdt" id="sdt" placeholder="Nhập số điện thoại để được tư vấn">
                                     </div>
                                     <div class="col-sm-2">
                                         <label class="sr-only" for="nhapsdt">Gửi Sđt</label>
@@ -104,7 +103,7 @@
                                 </tr>
                                 <tr>
                                     <td style="background-color: #ededed">Đồng Hồ Dành Cho</td>
-                                    <td>Đồng Hồ Nam</td>
+                                    <td>{{$product->category->name}}</td>
                                 </tr>
                                 <tr>
                                     <td style="background-color: #ededed">Kích Cỡ</td>
@@ -153,7 +152,8 @@
         </div>
     </div>
 </div>
-{{--<script src="/js/trangchitiet.js"></script>--}}
+<script src="/js/trangchitiet.js"></script>
+<script src="/js/giohang.js"></script>
 <div id="lienhe"></div>
 @include('layouts.footer')
 

@@ -13,15 +13,10 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 navbar-vertical">
             <ul>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Casio</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Rolex</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Omega</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Citizent</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Seiko</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Movado</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Hubman</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Casio</a></li>
-                <li><img src="../images/omega.png" class="brand"><a href="#">Casio</a></li>
+                @foreach($branches as $branch)
+                    <li><img src="../images/{{$branch->image}}" class="brand"><a href="{{route('branch',['id'=>$branch->id])}}">{{$branch->name}}</a></li>
+                @endforeach
+
 
             </ul>
         </div>
@@ -42,48 +37,27 @@
 <div class="container-fruid text-center">
     <div class="sanphamnoibat">
         <div class="slide-sanphamnoibat">
-            <div class="slider hvr-buzz">
-                <img src="../images/1491757567dong-ho-doi-citizen-bm6772-05aew1582-03a.jpg"
-                     title="<?php echo "Casio<br>";
-                     echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020025diamon.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492021047casio-ltp.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020568diamond-dm.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
+            @foreach($productsHot as $product)
+                <a href="{{route('chitietsanpham',['id'=>$product->id])}}"><div class="slider hvr-buzz">
+                        <img src="../images/<?=$product['image']?>" title="<?=$product['name'];echo "<br>"; echo number_format($product['cost'],'0','','.')?>">
+                    </div></a>
+            @endforeach
         </div>
     </div>
 </div>
 
-<h2 class="font-lobster text-center"><a href="#">ĐỒNG HỒ NAM</a> </h2>
+
+<h2 class="font-lobster text-center"><a href="{{route('category',['id'=>1])}}">ĐỒNG HỒ NAM</a> </h2>
 <div class="container-fruid text-center">
     <div class="sanphamnoibat">
         <div class="slide-sanphamnoibat">
-            <div class="slider hvr-buzz">
-                <img src="../images/1491757567dong-ho-doi-citizen-bm6772-05aew1582-03a.jpg"
-                     title="<?php echo "Casio<br>";
-                     echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020025diamon.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492021047casio-ltp.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020568diamond-dm.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
+
+            @foreach($productsForMen as $product)
+                <a href="{{route('chitietsanpham',['id'=>$product->id])}}"><div class="slider hvr-buzz">
+                        <img src="../images/<?=$product['image']?>" title="<?=$product['name'];echo "<br>"; echo number_format($product['cost'],'0','','.')?>">
+                    </div></a>
+            @endforeach
+
         </div>
     </div>
 </div>
@@ -173,52 +147,28 @@
     <hr>
 </div>
 
-<h2 class="font-lobster text-center"><a href="#">ĐỒNG HỒ NỮ</a> </h2>
+<h2 class="font-lobster text-center"><a href="{{route('category',['id'=>2])}}">ĐỒNG HỒ NỮ</a> </h2>
 <div class=" container-fruid text-center">
     <div class="sanphamnoibat">
         <div class="slide-sanphamnoibat">
-            <div class="slider hvr-buzz">
-                <img src="../images/1491757567dong-ho-doi-citizen-bm6772-05aew1582-03a.jpg"
-                     title="<?php echo "Casio<br>";
-                     echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020025diamon.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492021047casio-ltp.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020568diamond-dm.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
+            @foreach($productsForLady as $product)
+                <a href="{{route('chitietsanpham',['id'=>$product->id])}}"><div class="slider hvr-buzz">
+                        <img src="../images/<?=$product['image']?>" title="<?=$product['name'];echo "<br>"; echo number_format($product['cost'],'0','','.')?>">
+                    </div></a>
+            @endforeach
         </div>
     </div>
 </div>
 
-<h2 class="font-lobster text-center"><a href="#">ĐỒNG HỒ ĐÔI</a> </h2>
+<h2 class="font-lobster text-center"><a href="{{route('category',['id'=>3])}}">ĐỒNG HỒ ĐÔI</a> </h2>
 <div class="container-fruid text-center">
     <div class="sanphamnoibat">
         <div class="slide-sanphamnoibat">
-            <div class="slider hvr-buzz">
-                <img src="../images/1491757567dong-ho-doi-citizen-bm6772-05aew1582-03a.jpg"
-                     title="<?php echo "Casio<br>";
-                     echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020025diamon.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492021047casio-ltp.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
-            <div class="slider hvr-buzz">
-                <img src="../images/1492020568diamond-dm.jpg" title="<?php echo "Casio<br>";
-                echo "4.800.000"; ?>">
-            </div>
+            @foreach($productsForPair as $product)
+                <a href="{{route('chitietsanpham',['id'=>$product->id])}}"><div class="slider hvr-buzz">
+                        <img src="../images/<?=$product['image']?>" title="<?=$product['name'];echo "<br>"; echo number_format($product['cost'],'0','','.')?>">
+                    </div></a>
+            @endforeach
         </div>
     </div>
 </div>

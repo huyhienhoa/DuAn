@@ -16,8 +16,10 @@ Route::middleware(["auth"])->group(function () {
 
     Route::get('/add','ProductController@showAddForm')->name('showAddForm');
 
+
     Route::post('/add','ProductController@createProduct');
     Route::get('{id}/edit','ProductController@showUpdateForm')->name('edit');
+//Route::get('/home', 'HomeController@index')->name('home');
 
     Route::post('{id}/edit','ProductController@update');
 
@@ -25,16 +27,32 @@ Route::middleware(["auth"])->group(function () {
 
     Route::post('/{id}/delete','ProductController@delete');
 });
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@login')->name('home');
 
+Route::get('/branch/add','BranchController@showAddForm')->name('showAddBranchForm');
+
+Route::post('/branch/add','BranchController@add');
 
 
-Route::get('/index','HomeController@index');
 
-Route::get('/{id}/chitietsanpham','HomeController@chitietsanpham');
+Route::get('/index','HomeController@index')->name('index');
 
-Route::get('{id}/category','HomeController@category');
+Route::get('/{id}/chitietsanpham','HomeController@chitietsanpham')->name('chitietsanpham');
+
+Route::get('{id}/category','HomeController@category')->name('category');
+
+Route::get('{id}/branch','HomeController@branch')->name('branch');
+
+Route::get('/{id}/mua-hang','HandleController@muahang')->name('muahang');
+
+Route::get('gio-hang',['as'=>'giohang','uses'=>'HandleController@giohang']);
+
+Route::get('/xoa-san-pham/{id}','HandleController@xoasanpham')->name('xoasanpham');
+
+Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'HandleController@capnhat']);
+
+Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']);
+
+Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);

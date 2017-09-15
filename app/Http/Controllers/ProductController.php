@@ -17,6 +17,7 @@ class ProductController extends Controller
 
     public function listProduct(){
         $products = Product::with('category','branch')->get();
+        $products = Product::paginate(5);
         return view('product.products',compact('products'));
     }
 
