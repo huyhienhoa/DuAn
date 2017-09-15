@@ -9,6 +9,7 @@
     <div class="container">
         <h2 class="text-center text-uppercase">Thông tin khách hàng</h2>
         <form method="post" class="form-group">
+            {{csrf_field()}}
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
                     <label>Họ tên của bạn <span class="text-danger">*</span></label>
@@ -40,7 +41,7 @@
             <div class="row">
                     <div class="col-sm-offset-3 col-sm-6">
                         <span><a href="{{route('index')}}" class="btn btn-info"><i class="glyphicon glyphicon-hand-left"></i> Tiếp tục mua hàng</a></span>
-                        <span><a href="{{route('thanhtoan')}}" class="btn btn-info"><i class="glyphicon glyphicon-usd"></i> Thanh toán</a></span>
+                        <span><button type="submit" class="btn btn-info"><i class="glyphicon glyphicon-usd"></i> Thanh toán</button></span>
                     </div>
             </div>
             <br>
@@ -48,4 +49,5 @@
     </div>
 </body>
 @include('layouts.footer')
+{{--test--}}
 </html>
