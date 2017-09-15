@@ -35,7 +35,10 @@ class HandleController extends Controller
     }
 
     public function capnhat(){
-        if(Request::ajax()){
+        if(\Illuminate\Support\Facades\Request::ajax()){
+            $id = \Illuminate\Support\Facades\Request::get('id');
+            $qty = \Illuminate\Support\Facades\Request::get('qty');
+            Cart::update($id,$qty);
             echo "oke";
         }
     }

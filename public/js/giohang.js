@@ -5,13 +5,13 @@ $(document).ready(function () {
         var token = $("input[name='_token']").val();
 
         $.ajax({
-            url:'cap-nhat/'*rowid*'/'*qty,
+            url:'cap-nhat/'+rowid+'/'+qty,
             type:'GET',
             cache:false,
             data:{"_token":token,"id":rowid, "qty":qty},
             success:function (data) {
                 if(data == "oke"){
-                    alert("Yes");
+                    window.location = "gio-hang";
                 }
             }
         });
