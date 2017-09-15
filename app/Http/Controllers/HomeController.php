@@ -9,18 +9,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
     
-
     public function index(){
         $branches = Branch::all();
         $productsHot = Product::where('hot',1)->take(10)->get();
