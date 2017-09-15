@@ -21,7 +21,6 @@
             </div><br>
             <table class="table table-bordered table-responsive table-striped">
                 <tr>
-                    <th>STT</th>
                     <th>Tên sản phẩm</th>
                     <th>Đơn giá</th>
                     <th>Số lượng</th>
@@ -37,7 +36,6 @@
 
                 @foreach($products as $key => $product)
                     <tr>
-                        <td><?=$key+1; ?></td>
                         <td><?=$product['name']; ?></td>
                         <td><?=number_format($product['cost'],0,'','.'); ?></td>
                         <td><?=$product['quantity']; ?></td>
@@ -54,6 +52,7 @@
                     </tr>
                 @endforeach
             </table>
+            {{$products->links()}}
         </div>
 
     </div>

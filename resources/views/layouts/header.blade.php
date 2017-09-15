@@ -55,24 +55,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" target="_blank">2H1MWatch.vn</a>
+                    <a class="navbar-brand" href="{{route('index')}}">2H1MWatch.vn</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="header.html" target="_blank">TRANG CHỦ</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">ĐỒNG HỒ NAM
-                                <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" target="_blank"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">ĐỒNG HỒ NỮ</a></li>
-                        <li><a href="#">ĐỒNG HỒ ĐÔI</a></li>
+                        <li><a href="{{route('index')}}">TRANG CHỦ</a></li>
+                        <li><a href="{{route('category',['id'=>1])}}">ĐỒNG HỒ NAM</a></li>
+                        <li><a href="{{route('category',['id'=>2])}}">ĐỒNG HỒ NỮ</a></li>
+                        <li><a href="{{route('category',['id'=>3])}}">ĐỒNG HỒ ĐÔI</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -88,7 +78,7 @@
                                 </div>
                             </form>
                         </li>
-                        <li><a href="#"><span class="fa fa-shopping-cart zoom-icon"></span></a></li>
+                        <li><a href="{{route('giohang')}}"><span class="fa fa-shopping-cart zoom-icon"></span></a></li>
                     </ul>
                 </div>
             </div>
