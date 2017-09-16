@@ -16,16 +16,20 @@ Route::middleware(["auth"])->group(function () {
 
     Route::get('/add','ProductController@showAddForm')->name('showAddForm');
 
-
     Route::post('/add','ProductController@createProduct');
+
     Route::get('{id}/edit','ProductController@showUpdateForm')->name('edit');
-//Route::get('/home', 'HomeController@index')->name('home');
 
     Route::post('{id}/edit','ProductController@update');
 
     Route::get('/{id}/delete','ProductController@showDeleteForm')->name('delete');
 
     Route::post('/{id}/delete','ProductController@delete');
+
+
+
+
+    Route::get('order','OrderController@index')->name('orders');
 });
 Auth::routes();
 
@@ -34,6 +38,12 @@ Route::get('/home', 'HomeController@login')->name('home');
 Route::get('/branch/add','BranchController@showAddForm')->name('showAddBranchForm');
 
 Route::post('/branch/add','BranchController@add');
+
+
+
+
+
+
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use \Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HandleController extends Controller
 {
@@ -26,14 +27,6 @@ class HandleController extends Controller
         return redirect()->action('HandleController@giohang');
     }
 
-    public function thanhtoan(){
-        return view('layouts.formthanhtoan');
-    }
-
-    public function chotdonhang(){
-        return "abc";
-    }
-
     public function capnhat(){
         if(\Illuminate\Support\Facades\Request::ajax()){
             $id = \Illuminate\Support\Facades\Request::get('id');
@@ -42,5 +35,30 @@ class HandleController extends Controller
             echo "oke";
         }
     }
+
+
+
+    public function thanhtoan(){
+        return view('layouts.formthanhtoan');
+    }
+
+    public function chotdonhang(Request $request){
+        $email = $request->input('email');
+        $data = ['content'=>Cart::content(),'total'=>Cart::total()];
+//        var_dump($data);exit;
+        Mail::send('mails.order',$data,function ($message) use ($email){
+            $message->from('huyhienhoactn@gmail.com','2H1M Watch');
+            $message->to($email)->subject('Đơn hàng của bạn tại 2H1M Watch');
+        });
+        Cart::destroy();
+        echo "<script>
+                alert('Cảm ơn bạn đã đặt hàng. Nhân viên của chúng tôi sẽ liên lạc với bạn sau ít phút nữa. Bạn có thể check lại đơn hàng của bạn trong Email!');
+                window.location ='".url('/index')."'
+               </script>";
+
+        
+    }
+
+
 }
         
