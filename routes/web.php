@@ -26,10 +26,17 @@ Route::middleware(["auth"])->group(function () {
 
     Route::post('/{id}/delete','ProductController@delete');
 
+    Route::get('/don-hang',['as' => 'orders', 'uses' => 'OrderController@index']);
 
-
-
-    Route::get('order','OrderController@index')->name('orders');
+    Route::group(['prefix'=>'don-hang'],function (){
+        
+        Route::get('/{id}/xem',['as'=>'view','uses'=>'OrderController@show']);
+        Route::get('/{id}/cap-nhat',['as'=>'edit','uses'=>'OrderController@edit']);
+        Route::post('/{id}/cap-nhat',['uses'=>'OrderController@update']);
+        Route::get('/{id}/xoa',['as'=>'delete','uses'=>'OrderController@destroy']);
+        Route::post('/{id}/xoa',['uses'=>'OrderController@delete']);
+    });
+    
 });
 Auth::routes();
 

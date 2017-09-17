@@ -1,7 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 17/09/2017
- * Time: 8:54 AM
- */
+<h2 class="text-danger">2H1M Watch Khẳng định đẳng cấp</h2>

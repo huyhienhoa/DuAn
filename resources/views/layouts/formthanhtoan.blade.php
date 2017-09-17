@@ -27,7 +27,14 @@
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
                     <label>Sđt của bạn <span class="text-danger">*</span></label>
-                    <input type="text" name="name" placeholder="Nhập chính xác sđt của bạn" class="form-control">
+                    <input type="text" name="phone" placeholder="Nhập chính xác sđt của bạn" class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <label>Địa chỉ của bạn</label>
+                    <input type="text" name="address" placeholder="Nhập địa chỉ của bạn" class="form-control">
                 </div>
             </div>
 
@@ -38,6 +45,16 @@
                 </div>
             </div>
             <br>
+
+            <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                    <label>Hình thức nhận hàng </label><br>
+                    <input type="radio" checked> Nhận hàng-thanh toán (COD)
+
+                </div>
+            </div>
+            <br>
+
             <div class="row">
                     <div class="col-sm-offset-3 col-sm-6">
                         <span><a href="{{route('index')}}" class="btn btn-info"><i class="glyphicon glyphicon-hand-left"></i> Tiếp tục mua hàng</a></span>

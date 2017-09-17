@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\Product;
 use \Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -37,7 +38,6 @@ class HandleController extends Controller
     }
 
 
-
     public function thanhtoan(){
         return view('layouts.formthanhtoan');
     }
@@ -45,7 +45,6 @@ class HandleController extends Controller
     public function chotdonhang(Request $request){
         $email = $request->input('email');
         $data = ['content'=>Cart::content(),'total'=>Cart::total()];
-//        var_dump($data);exit;
         Mail::send('mails.order',$data,function ($message) use ($email){
             $message->from('huyhienhoactn@gmail.com','2H1M Watch');
             $message->to($email)->subject('Đơn hàng của bạn tại 2H1M Watch');

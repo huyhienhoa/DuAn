@@ -55,6 +55,9 @@ class ProductController extends Controller
         }
         
         return redirect()->action('ProductController@listProduct');
+
+
+        
     }
 
 
