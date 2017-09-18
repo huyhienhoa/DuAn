@@ -1,5 +1,6 @@
 
-$(document).ready(function () {
+
+jQuery(window).on("load",function () {
 //        slider = $('.bxslider').bxSlider();
 //        slider.goToNextSlide();
     $('.bxslider1').bxSlider({
@@ -52,4 +53,5 @@ $(document).ready(function () {
         })
     }
 
+    console.log('hi');
 })

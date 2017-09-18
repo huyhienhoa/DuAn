@@ -27,8 +27,8 @@
                 <td>{{$order->created_at}}</td>
                 <td>{{$order->totalCost}}</td>
                 <td><span><a href="{{route('view',['id'=>$order->id])}}"><i class="glyphicon glyphicon-eye-open"> </i> </a></span>
-                <span> <a href="{{route('edit',['id'=>$order->id])}}"><i class="glyphicon glyphicon-edit"> </i> </a></span>
-                <span> <a href="{{route('delete',['id'=>$order->id])}}"><i class="glyphicon glyphicon-trash"> </i> </a></span>
+                <span> <a href="{{route('don-hang/edit',['id'=>$order->id])}}"><i class="glyphicon glyphicon-edit"> </i> </a></span>
+                <span> <a href="{{route('don-hang/delete',['id'=>$order->id])}}"><i class="glyphicon glyphicon-trash"> </i> </a></span>
                 </td>
             </tr>
         @endforeach

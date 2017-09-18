@@ -31,9 +31,9 @@ Route::middleware(["auth"])->group(function () {
     Route::group(['prefix'=>'don-hang'],function (){
         
         Route::get('/{id}/xem',['as'=>'view','uses'=>'OrderController@show']);
-        Route::get('/{id}/cap-nhat',['as'=>'edit','uses'=>'OrderController@edit']);
+        Route::get('/{id}/cap-nhat',['as'=>'don-hang/edit','uses'=>'OrderController@edit']);
         Route::post('/{id}/cap-nhat',['uses'=>'OrderController@update']);
-        Route::get('/{id}/xoa',['as'=>'delete','uses'=>'OrderController@destroy']);
+        Route::get('/{id}/xoa',['as'=>'don-hang/delete','uses'=>'OrderController@destroy']);
         Route::post('/{id}/xoa',['uses'=>'OrderController@delete']);
     });
     
