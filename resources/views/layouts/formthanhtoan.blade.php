@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
                     <label>Ghi chú </label>
-                    <textarea rows="5" name="ghichu" class="form-control" placeholder="Nhập ghi chú của bạn"></textarea>
+                    <textarea rows="5" name="note" class="form-control" placeholder="Nhập ghi chú của bạn"></textarea>
                 </div>
             </div>
             <br>

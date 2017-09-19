@@ -20,6 +20,7 @@
             <form method="post" action="">
                 {{csrf_field()}}
                 @foreach($content as $product)
+                    <input type="hidden" name="id" value="{{$product->id}}">
                     <tr>
                         <td>{{$product->name}}</td>
                         <td><img src="{!! asset('/images/'.$product->options->img) !!}" width="70px"></td>
@@ -38,7 +39,7 @@
                 <span><a href="{{route('thanhtoan')}}" class="btn btn-info"><i class="glyphicon glyphicon-usd"></i> Thanh toán</a></span>
             </div>
             <div class="col-sm-6">
-                <div class="bg bg-info" style="padding: 10px 20px"><h2>Tổng tiền : {!! $total !!} VNĐ</h2></div>
+                <div class="bg bg-info" style="padding: 10px 20px"><h2>Tổng tiền : {!! number_format($total,0,',','.') !!} VNĐ</h2></div>
             </div>
         </div>
     </div>
