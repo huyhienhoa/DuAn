@@ -1,4 +1,4 @@
-@extends('order.master')
+@extends('layouts.app')
 
 
 @section('content')

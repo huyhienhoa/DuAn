@@ -1,4 +1,4 @@
-@extends('order.master')
+@extends('layouts.app')
 @section('content')
     <h2 class="text-center text-primary">Cập nhật đơn hàng</h2>
     <form method="post" class="form-group">

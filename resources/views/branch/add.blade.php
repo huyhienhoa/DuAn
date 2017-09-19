@@ -1,19 +1,6 @@
-<html>
-<head>
-    <title>Thêm thương hiệu</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
-<style>
-    body{
-        margin: 20px;
-    }
+@extends('layouts.app')
 
-    h1{
-        font-weight: bold;
-        color: #ba4715;
-    }
-</style>
-<body>
+@section('content')
 <div class="container">
     <h1>Thêm thương hiệu</h1>
     <form method="post" class="form-group" enctype="multipart/form-data">
@@ -43,15 +30,4 @@
         </div>
     </form>
 </div>
-</body>
-</html>
-<?php
-//        if (empty('<input type="submit" class="btn btn-info" value="Thêm thương hiệu"/>')){
-//            echo '<img src="../../public/images/chrome-trex-dinosaur.jpg">';
-//        }
-//?>
-<?php
-//if (('<input type="file" accept="image/jpeg, image/png" name="image"/>' ==0)){
-//    echo '<img src="../../public/images/chrome-trex-dinosaur.jpg">';
-//}
-//?>
+@endsection

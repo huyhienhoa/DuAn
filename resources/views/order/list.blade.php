@@ -1,4 +1,4 @@
-@extends('order.master')
+@extends('layouts.app')
 
 @section('content')
     <h2 class="text-center">Danh sách đơn đặt hàng</h2>

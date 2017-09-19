@@ -33,4 +33,9 @@ class HomeController extends Controller
         $category = Category::find($id);
         return view('layouts.category', compact('category'));
     }
+
+    public function login()
+    {
+        return view('home');
+    }
 }
