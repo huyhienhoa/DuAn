@@ -1,7 +1,47 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 9/18/2017
- * Time: 3:42 PM
- */
+<html>
+<head>
+    <title>Sửa sản phẩm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<style>
+    body{
+        margin: 20px;
+    }
+
+    h1{
+        font-weight: bold;
+        color: #ba4715;
+    }
+</style>
+<body>
+<div class="container">
+    <h1>Chỉnh sửa</h1>
+    <form method="post">
+        {{csrf_field()}}
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <label>Tên thương hiệu</label>
+                <input class="form-control" type="text" name="name" value="{{$branch->name}}"/>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <label>Logo</label>
+                <input type="file" accept="image/jpeg, image/png" name="image" value="{{$branch->image}}"/>
+                <br>
+                <label>Ảnh cũ: </label><br>
+                <img src="/images/{{$branch->image}}" width="250px" style="border: 1px solid gray">
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <a href="{{route('branch.list')}}" class="btn btn-info"><i class="glyphicon glyphicon-arrow-left"></i> Quay lại</a>
+                <input type="submit" class="btn btn-info" value="Chỉnh sửa"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -13,8 +13,8 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 navbar-vertical">
             <ul>
-                @foreach($branches as $branch)
-                    <li><img src="../images/{{$branch->image}}" class="brand"><a href="{{route('branch',['id'=>$branch->id])}}">{{$branch->name}}</a></li>
+                @foreach($branches->take(9) as $branch)
+                    <li><img src="/images/{{$branch->image}}" class="brand"><a href="{{route('branch',['id'=>$branch->id])}}">{{$branch->name}}</a></li>
                 @endforeach
 
 

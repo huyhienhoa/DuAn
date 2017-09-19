@@ -1,34 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>thêm thương hiệu</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Thêm thương hiệu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
-    <div class="container">
-        <h2>Thêm thương hiệu</h2>
-        <form method="post" class="form-group" enctype="multipart/form-data">
-            {{csrf_field()}}
+<style>
+    body{
+        margin: 20px;
+    }
 
+    h1{
+        font-weight: bold;
+        color: #ba4715;
+    }
+</style>
+<body>
+<div class="container">
+    <h1>Thêm thương hiệu</h1>
+    <form method="post" class="form-group" enctype="multipart/form-data">
+        {{csrf_field()}}
+        <div class="info">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-10 col-md-offset-1">
                     <label>Tên thương hiệu</label>
-                    <input type="text" class="form-control" name="name">
-                </div>
-                <div class="col-md-6">
-                    <label>Thêm ảnh</label>
-                    <input type="file" name="photo">
+                    <input class="form-control" type="text" name="name"/>
                 </div>
             </div>
             <br>
             <div class="row">
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-floppy-saved"></i> Lưu lại</button>
+                <div class="col-md-10 col-md-offset-1">
+                    <label>Logo</label>
+                    <input type="file" name="image"/>
+
                 </div>
             </div>
-        </form>
-    </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-1">
+                <a href="{{route('branch.list')}}" class="btn btn-info"><i class="glyphicon glyphicon-arrow-left"></i> Quay lại</a>
+                <input type="submit" class="btn btn-info" value="Thêm thương hiệu"/>
+            </div>
+        </div>
+    </form>
+</div>
 </body>
 </html>
+<?php
+//        if (empty('<input type="submit" class="btn btn-info" value="Thêm thương hiệu"/>')){
+//            echo '<img src="../../public/images/chrome-trex-dinosaur.jpg">';
+//        }
+//?>
+<?php
+//if (('<input type="file" accept="image/jpeg, image/png" name="image"/>' ==0)){
+//    echo '<img src="../../public/images/chrome-trex-dinosaur.jpg">';
+//}
+//?>

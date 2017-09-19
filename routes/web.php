@@ -46,15 +46,8 @@ Route::get('/branch/add','BranchController@showAddForm')->name('showAddBranchFor
 
 Route::post('/branch/add','BranchController@add');
 
-
-
-
-
-
-
-
-
 Route::get('/index','HomeController@index')->name('index');
+Route::get('/','HomeController@index')->name('index');
 
 Route::get('/{id}/chitietsanpham','HomeController@chitietsanpham')->name('chitietsanpham');
 
@@ -73,3 +66,11 @@ Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'HandleController@capn
 Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']);
 
 Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);
+
+Route::get('/branch', "BranchController@listAllBranchs")->name("branch.list");
+Route::get('/branch/add', "BranchController@showAddForm")->name("branch.add");
+Route::post('/branch/add', "BranchController@createBranch")->name("branch.create");
+Route::get('/branch/{id}/edit', "BranchController@showEditForm")->name("branch.edit");
+Route::post('/branch/{id}/edit', "BranchController@updateBranch")->name("branch.update");
+Route::get('/branch/{id}/delete', "BranchController@showDeleteForm")->name("branch.deleteForm");
+Route::post('/branch/{id}/delete', "BranchController@deleteBranch")->name("branch.delete");
