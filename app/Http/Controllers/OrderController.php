@@ -60,7 +60,8 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        return view('order.update');
+        $order = Order::find($id);
+        return view('order.update',compact('order'));
     }
 
     /**

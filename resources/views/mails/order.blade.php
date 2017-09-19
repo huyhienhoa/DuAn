@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/css/jquery.bxslider.css">
-    <link href="/css/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/css/style.css">
-    <link type="text/css" rel="stylesheet" href="/css/css/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <link href="/css/css/hover.css" rel="stylesheet" type="text/css">
-    <script src="/js/jquery-3.2.1.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/jquery.bxslider.js"></script>
-    <script src="/js/index.js"></script>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        tr,th,td{
+            border: 1px solid #9a9a9a;
+            text-align: center;
+        }
+        th,td{
+            width: 150px;
+        }
+        .bg-info{
+            background-color: #e9e9e9;
+        }
+        th{
+            background-color: #e8dfff;
+        }
+        .col-sm-6{
+            width: 50%;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
-    <h2 class="text-center text-uppercase">Danh sách sản phẩm bạn đã đặt mua</h2>
+    <h1 class="text-center text-uppercase">Danh sách sản phẩm bạn đã đặt mua</h1>
     <table class="table table-bordered table-responsive table-striped">
         <tr>
             <th>Tên sản phẩm</th>
-            <th>Hình ảnh</th>
             <th>Số lượng</th>
             <th>Đơn giá</th>
             <th>Thành tiền</th>
@@ -30,13 +38,14 @@
         @foreach($content as $product)
             <tr>
                 <td>{{$product->name}}</td>
-                <td><img src="{!! asset('/images/'.$product->options->img) !!}" width="70px"></td>
+{{--                <td><img src="{!! asset('/images/'.$product->options->img) !!}" width="70px"></td>--}}
                 <td>{{$product->qty}}</td>
                 <td><?=number_format($product->price,0,'','.')?></td>
                 <td><?=number_format($product->qty * $product->price,0,'','.')?></td>
             </tr>
         @endforeach
     </table>
+    <br>
     <div class="row">
         <div class="col-sm-6">
             <div class="bg bg-info" style="padding: 10px 20px"><h2>Tổng tiền : {!!$total !!} VNĐ</h2></div>
