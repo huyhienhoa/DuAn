@@ -75,7 +75,7 @@ Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']
 
 Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);
 
-<<<<<<< HEAD
+
 Route::get('/branch', "BranchController@listAllBranchs")->name("branch.list");
 Route::get('/branch/add', "BranchController@showAddForm")->name("branch.add");
 Route::post('/branch/add', "BranchController@createBranch")->name("branch.create");
@@ -93,5 +93,3 @@ Route::get('/category/{id}/delete', "CategoryController@showDeleteForm")->name("
 Route::post('/category/{id}/delete', "CategoryController@deleteCategory")->name("category.delete");
 
 //Route::get('/{id}/branchproduct','HomeController@branchproduct') ->name('branchproduct');
-=======
->>>>>>> f36c4ed2c6bef084834535b2c7181157ed3038eb
