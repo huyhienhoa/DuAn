@@ -1,4 +1,4 @@
-@extends('order.master')
+@extends('layouts.app')
 
 @section('content')
     <h2 class="text-center">Danh sách đơn đặt hàng</h2>
@@ -15,7 +15,7 @@
             <th>Hành động</th>
 
         </tr>
-
+        {{--{{dd($content)}}--}}
         @foreach($orders as $key=>$order)
             <tr>
                 <td>{{$key+1}}</td>
@@ -25,10 +25,13 @@
                 <td>{{$order->address}}</td>
                 <td>{{$order->status}}</td>
                 <td>{{$order->created_at}}</td>
-                <td>{{$order->totalCost}}</td>
+                <td>{{number_format($order->totalCost,0,'','.')}}</td>
                 <td><span><a href="{{route('view',['id'=>$order->id])}}"><i class="glyphicon glyphicon-eye-open"> </i> </a></span>
-                <span> <a href="{{route('don-hang/edit',['id'=>$order->id])}}"><i class="glyphicon glyphicon-edit"> </i> </a></span>
-                <span> <a href="{{route('don-hang/delete',['id'=>$order->id])}}"><i class="glyphicon glyphicon-trash"> </i> </a></span>
+                    @if($order->status != "đã giao hàng")
+                        <span> <a href="{{route('don-hang/edit',['id'=>$order->id])}}"><i class="glyphicon glyphicon-edit"> </i> </a></span>
+                    @endif
+
+                {{--<span> <a href="{{route('don-hang/delete',['id'=>$order->id])}}"><i class="glyphicon glyphicon-trash"> </i> </a></span>--}}
                 </td>
             </tr>
         @endforeach

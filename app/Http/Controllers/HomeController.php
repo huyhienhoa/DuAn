@@ -43,4 +43,9 @@ class HomeController extends Controller
 
         return view('layouts.branch', compact('category','products', 'branches','thuonghieus'));
     }
+
+    public function login()
+    {
+        return view('home');
+    }
 }

@@ -36,15 +36,23 @@ Route::middleware(["auth"])->group(function () {
         Route::get('/{id}/xoa',['as'=>'don-hang/delete','uses'=>'OrderController@destroy']);
         Route::post('/{id}/xoa',['uses'=>'OrderController@delete']);
     });
-    
+    Route::get('/branch', "BranchController@listAllBranchs")->name("branch.list");
+    Route::get('/branch/add', "BranchController@showAddForm")->name("branch.add");
+    Route::post('/branch/add', "BranchController@createBranch")->name("branch.create");
+    Route::get('/branch/{id}/edit', "BranchController@showEditForm")->name("branch.edit");
+    Route::post('/branch/{id}/edit', "BranchController@updateBranch")->name("branch.update");
+    Route::get('/branch/{id}/delete', "BranchController@showDeleteForm")->name("branch.deleteForm");
+    Route::post('/branch/{id}/delete', "BranchController@deleteBranch")->name("branch.delete");
+
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@login')->name('home');
 
-Route::get('/branch/add','BranchController@showAddForm')->name('showAddBranchForm');
-
-Route::post('/branch/add','BranchController@add');
+//Route::get('/branch/add','BranchController@showAddForm')->name('showAddBranchForm');
+//
+//Route::post('/branch/add','BranchController@add');
 
 Route::get('/index','HomeController@index')->name('index');
 Route::get('/','HomeController@index')->name('index');
@@ -67,6 +75,7 @@ Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']
 
 Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);
 
+<<<<<<< HEAD
 Route::get('/branch', "BranchController@listAllBranchs")->name("branch.list");
 Route::get('/branch/add', "BranchController@showAddForm")->name("branch.add");
 Route::post('/branch/add', "BranchController@createBranch")->name("branch.create");
@@ -84,3 +93,5 @@ Route::get('/category/{id}/delete', "CategoryController@showDeleteForm")->name("
 Route::post('/category/{id}/delete', "CategoryController@deleteCategory")->name("category.delete");
 
 //Route::get('/{id}/branchproduct','HomeController@branchproduct') ->name('branchproduct');
+=======
+>>>>>>> f36c4ed2c6bef084834535b2c7181157ed3038eb

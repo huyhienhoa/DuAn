@@ -48,7 +48,7 @@
     <br>
     <div class="row">
         <div class="col-sm-6">
-            <div class="bg bg-info" style="padding: 10px 20px"><h2>Tổng tiền : {!!$total !!} VNĐ</h2></div>
+            <div class="bg bg-info" style="padding: 10px 20px"><h2>Tổng tiền : {!!number_format($total,0,',','.') !!} VNĐ</h2></div>
         </div>
     </div>
     <div class="row">

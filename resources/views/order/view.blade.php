@@ -1,4 +1,4 @@
-@extends('order.master')
+@extends('layouts.app')
 
 
 @section('content')
@@ -27,7 +27,10 @@
     @endforeach
     </table>
     <div class="row">
-        <div class="col-sm-offset-6 col-sm-6">
+        <div class="col-sm-3">
+            <a href="{{route('orders')}}" class="btn btn-info"><i class="glyphicon glyphicon-hand-left"></i> Quay lại</a>
+        </div>
+        <div class="col-sm-offset-3 col-sm-6">
             <h2>Tổng tiền: {{number_format($tongtien,0,',','.')}} VNĐ</h2>
         </div>
     </div>
