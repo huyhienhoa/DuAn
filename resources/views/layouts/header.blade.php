@@ -63,6 +63,7 @@
                         <li><a href="{{route('category',['id'=>1])}}">ĐỒNG HỒ NAM</a></li>
                         <li><a href="{{route('category',['id'=>2])}}">ĐỒNG HỒ NỮ</a></li>
                         <li><a href="{{route('category',['id'=>3])}}">ĐỒNG HỒ ĐÔI</a></li>
+                        <li><a href="{{route('category',['id'=>4])}}">ĐỒNG HỒ TRẺ EM</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

@@ -14,11 +14,11 @@
         <div class="col-xs-12 col-sm-3 col-md-3 navbar-vertical">
             <ul>
                 @foreach($branches->take(9) as $branch)
-                    <li><img src="/images/{{$branch->image}}" class="brand"><a href="{{route('branch',['id'=>$branch->id])}}">{{$branch->name}}</a></li>
+                    <a href="{{route('branch',['id'=>1])}}"><li><img src="/images/{{$branch->image}}" class="brand"><a href="{{route('branch',['id'=>$branch->id])}}">{{$branch->name}}</a></li>
+                    </a>
                 @endforeach
-
-
             </ul>
+
         </div>
         <div class="col-xs-12 col-sm-9 col-md-9">
             <ul class="bxslider1">
@@ -51,7 +51,6 @@
 <div class="container-fruid text-center">
     <div class="sanphamnoibat">
         <div class="slide-sanphamnoibat">
-
             @foreach($productsForMen as $product)
                 <a href="{{route('chitietsanpham',['id'=>$product->id])}}"><div class="slider hvr-buzz">
                         <img src="../images/<?=$product['image']?>" title="<?=$product['name'];echo "<br>"; echo number_format($product['cost'],'0','','.')?>">

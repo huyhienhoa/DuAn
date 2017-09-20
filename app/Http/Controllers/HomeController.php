@@ -27,10 +27,20 @@ class HomeController extends Controller
         return view('layouts.chitietsanpham', compact('product'));
     }
 
-
     public function category($id)
     {
         $category = Category::find($id);
-        return view('layouts.category', compact('category'));
+        $products = Product::where('category_id','=',$id)->get();
+        $branches = Branch::all();
+        return view('layouts.category', compact('category','products', 'branches'));
+    }
+
+    public function branch($id)
+    {
+        $branches = Branch::find($id);
+        $products = Product::where('branch_id','=',$id)->get();
+        $thuonghieus = Branch::all();
+
+        return view('layouts.branch', compact('category','products', 'branches','thuonghieus'));
     }
 }
