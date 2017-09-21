@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 navbar-vertical">
             <ul>
-                @foreach($branches->take(9) as $branch)
+                @foreach($branches->take(8) as $branch)
                     <a href="{{route('branch',['id'=>1])}}"><li><img src="/images/{{$branch->image}}" class="brand"><a href="{{route('branch',['id'=>$branch->id])}}">{{$branch->name}}</a></li>
                     </a>
                 @endforeach
@@ -23,10 +23,9 @@
         <div class="col-xs-12 col-sm-9 col-md-9">
             <ul class="bxslider1">
                 <li><a href="#"><img src="../images/banner.png"></a></li>
-                <li><a href="#"><img src="../images/thiennhien1.jpg"></a></li>
-                <li><a href="#"><img src="../images/thiennhien2.jpg"></a></li>
-                <li><a href="#"><img src="../images/thiennhien3.jpg"></a></li>
-                <li><a href="#"><img src="../images/thiennhien4.jpg"></a></li>
+                <li><a href="#"><img src="../images/slide2.jpg"></a></li>
+                <li><a href="#"><img src="../images/slide3.jpg"></a></li>
+
             </ul>
         </div>
     </div>
