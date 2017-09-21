@@ -81,11 +81,3 @@ Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']
 Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);
 
 
-
-
-
-
-
-
-//Route::get('/{id}/branchproduct','HomeController@branchproduct') ->name('branchproduct');
-
