@@ -8,6 +8,17 @@
                 {{session('alert')}}
             </div>
         @endif
+            @if(session('update'))
+                <div class="alert alert-success">
+                    {{session('update')}}
+                </div>
+            @endif
+
+            @if(session('create'))
+                <div class="alert alert-success">
+                    {{session('create')}}
+                </div>
+            @endif
         <div>
             <h2 class="text-center text-danger">Danh sách sản phẩm</h2>
             <div>

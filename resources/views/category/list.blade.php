@@ -74,8 +74,6 @@
     @endforeach
 </table>
 <br><br>
-<a href="{{route("index")}}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
-<a href="{{route("category.add")}}" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i> Thêm thể loại</a>
 <br><br>
 @endsection
 
