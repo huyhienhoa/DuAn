@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(session('update'))
+        <div class="alert alert-success">
+            {{session('update')}}
+        </div>
+    @endif
     <h2 class="text-center">Danh sách đơn đặt hàng</h2>
     <table class="table table-responsive table-bordered table-striped">
         <tr>

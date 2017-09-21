@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/css/css/jquery.bxslider.css">
+    <script src="/js/index.js"></script>
+
     <link href="/css/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/css/style.css">
     <link type="text/css" rel="stylesheet" href="/css/css/index.css">
@@ -62,7 +64,6 @@
                         <li><a href="{{route('category',['id'=>1])}}">ĐỒNG HỒ NAM</a></li>
                         <li><a href="{{route('category',['id'=>2])}}">ĐỒNG HỒ NỮ</a></li>
                         <li><a href="{{route('category',['id'=>3])}}">ĐỒNG HỒ ĐÔI</a></li>
-                        <li><a href="{{route('category',['id'=>4])}}">ĐỒNG HỒ TRẺ EM</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">

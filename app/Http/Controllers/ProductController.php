@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function listProduct(){
         $products = Product::with('category','branch')->get();
-        $products = Product::paginate(5);
+        $products = Product::orderBy('id','desc')->paginate(5);
         return view('product.products',compact('products'));
     }
 
@@ -54,7 +54,7 @@ class ProductController extends Controller
             return view('errors.noImage');
         }
         
-        return redirect()->action('ProductController@listProduct');
+        return redirect()->action('ProductController@listProduct')->with('create','Bạn đã thêm sản phẩm thành công !');
 
 
         
@@ -109,6 +109,6 @@ class ProductController extends Controller
             return view('errors.noImage');
         }
 
-        return redirect()->action('ProductController@listProduct');
+        return redirect()->action('ProductController@listProduct')->with('update','Bạn đã cập nhật thành công !');
     }
 }

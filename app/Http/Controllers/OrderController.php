@@ -84,7 +84,7 @@ class OrderController extends Controller
         $order->status = $request->input('status');
         $order->note = $request->input('note');
         $order->save();
-        return redirect()->action('OrderController@index');
+        return redirect()->action('OrderController@index')->with('update','Bạn đã cập nhật đơn hàng thành công !');
     }
 
     /**
