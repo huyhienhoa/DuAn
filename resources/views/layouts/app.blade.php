@@ -48,6 +48,7 @@
                         @else
                             <li><a href="{{route("branch.list")}}">Thương Hiệu</a></li>
                             <li><a href="{{route("orders")}}">Đơn Hàng</a></li>
+                            <li><a href="{{route("category.list")}}">Đơn Hàng</a></li>
                         @endif
                     </ul>
 
