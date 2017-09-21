@@ -44,6 +44,13 @@ Route::middleware(["auth"])->group(function () {
     Route::get('/branch/{id}/delete', "BranchController@showDeleteForm")->name("branch.deleteForm");
     Route::post('/branch/{id}/delete', "BranchController@deleteBranch")->name("branch.delete");
 
+    Route::get('/category', "CategoryController@listAllCategories")->name("category.list");
+    Route::get('/category/add', "CategoryController@showAddForm")->name("category.add");
+    Route::post('/category/add', "CategoryController@createCategory")->name("category.create");
+    Route::get('/category/{id}/edit', "CategoryController@showEditForm")->name("category.edit");
+    Route::post('/category/{id}/edit', "CategoryController@updateCategory")->name("category.update");
+    Route::get('/category/{id}/delete', "CategoryController@showDeleteForm")->name("category.deleteForm");
+    Route::post('/category/{id}/delete', "CategoryController@deleteCategory")->name("category.delete");
 });
 
 Auth::routes();
@@ -74,6 +81,7 @@ Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']
 Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);
 
 
+
 Route::get('/branch', "BranchController@listAllBranchs")->name("branch.list");
 Route::get('/branch/add', "BranchController@showAddForm")->name("branch.add");
 Route::post('/branch/add', "BranchController@createBranch")->name("branch.create");
@@ -90,4 +98,8 @@ Route::post('/category/{id}/edit', "CategoryController@updateCategory")->name("c
 Route::get('/category/{id}/delete', "CategoryController@showDeleteForm")->name("category.deleteForm");
 Route::post('/category/{id}/delete', "CategoryController@deleteCategory")->name("category.delete");
 
+
+
+
+//Route::get('/{id}/branchproduct','HomeController@branchproduct') ->name('branchproduct');
 

@@ -1,8 +1,4 @@
-<html>
-<head>
-    <title>Xóa thể loại</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+@extends("layouts.app")
 <style>
     body{
         margin: 20px;
@@ -13,7 +9,7 @@
         color: #ba4715;
     }
 </style>
-<body>
+@section("content")
 <div class="container">
     <h1>Xóa thể loại</h1>
     <h3>Bạn chắc không?</h3>
@@ -35,5 +31,4 @@
         </div>
     </form>
 </div>
-</body>
-</html>
+@endsection

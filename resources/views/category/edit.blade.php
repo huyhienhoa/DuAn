@@ -1,8 +1,4 @@
-<html>
-<head>
-    <title>Sửa thể loại</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+@extends("layouts.app")
 <style>
     body{
         margin: 20px;
@@ -13,7 +9,7 @@
         color: #ba4715;
     }
 </style>
-<body>
+@section("content")
 <div class="container">
     <h1>Chỉnh sửa</h1>
     <form method="post">
@@ -34,5 +30,4 @@
         </div>
     </form>
 </div>
-</body>
-</html>
+@endsection

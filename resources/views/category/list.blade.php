@@ -1,8 +1,4 @@
-<html>
-<head>
-    <title>Danh mục</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+@extends("layouts.app")
 <style>
     body{
         margin: 20px;
@@ -57,7 +53,7 @@
     }
 
 </style>
-<body>
+@section("content")
 <h1>List thể loại</h1>
 <a href="{{route("index")}}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
 <a href="{{route("category.add")}}" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i> Thêm thể loại</a>
@@ -81,6 +77,5 @@
 <a href="{{route("index")}}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
 <a href="{{route("category.add")}}" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i> Thêm thể loại</a>
 <br><br>
-</body>
-</html>
+@endsection
 
