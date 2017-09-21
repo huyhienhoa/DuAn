@@ -73,7 +73,7 @@
                             <div class="effect">
                                 <div class="info">
                                     <p style="text-align: center">{{$product->name}}</p><br>
-                                    <p style="text-align: center; color: orange; font-weight: bold">{{$product->cost}} VNĐ</p>
+                                    <p style="text-align: center; color: orange; font-weight: bold">{{number_format($product->cost,0,'','.')}} VNĐ</p>
                                 </div>
                             </div>
                             </a>

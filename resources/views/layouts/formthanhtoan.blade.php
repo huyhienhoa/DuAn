@@ -13,21 +13,21 @@
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
                     <label>Họ tên của bạn <span class="text-danger">*</span></label>
-                    <input type="text" name="name" placeholder="Nhập chính xác tên của bạn" class="form-control">
+                    <input type="text" name="name" placeholder="Nhập chính xác tên của bạn" class="form-control" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
                     <label>Email của bạn <span class="text-danger">*</span></label>
-                    <input type="email" name="email" placeholder="Nhập email của bạn" class="form-control">
+                    <input type="email" name="email" placeholder="Nhập email của bạn" class="form-control" required>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-offset-3 col-sm-6">
                     <label>Sđt của bạn <span class="text-danger">*</span></label>
-                    <input type="text" name="phone" placeholder="Nhập chính xác sđt của bạn" class="form-control">
+                    <input type="text" name="phone" placeholder="Nhập chính xác sđt của bạn" class="form-control" required>
                 </div>
             </div>
 
