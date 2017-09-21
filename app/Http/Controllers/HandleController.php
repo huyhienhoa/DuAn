@@ -68,6 +68,7 @@ class HandleController extends Controller
         }
 
         $data = ['content'=>Cart::content(),'total'=>Cart::total()];
+
         Mail::send('mails.order',$data,function ($message) use ($email){
             $message->from('huyhienhoactn@gmail.com','2H1M Watch');
             $message->to($email)->subject('Đơn hàng của bạn tại 2H1M Watch');
@@ -77,12 +78,14 @@ class HandleController extends Controller
 //        Cart::instance('wishlist')->store($name);
         Cart::destroy();
         echo "<script>
-                alert('Cảm ơn bạn đã đặt hàng. Nhân viên của chúng tôi sẽ liên lạc với bạn sau ít phút nữa. Bạn có thể check lại đơn hàng của bạn trong Email!');
+                alert('Cảm ơn bạn đã đặt hàng. Nhân viên của chúng tôi sẽ liên lạc với bạn sau ít phút nữa. Bạn có thể check lại đơn hàng của bạn trong Email !');
                 window.location ='".url('/index')."'
                </script>";
 
         
     }
+
+
 
 
 }

@@ -50,9 +50,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@login')->name('home');
 
-//Route::get('/branch/add','BranchController@showAddForm')->name('showAddBranchForm');
-//
-//Route::post('/branch/add','BranchController@add');
+
 
 Route::get('/index','HomeController@index')->name('index');
 Route::get('/','HomeController@index')->name('index');
@@ -75,7 +73,7 @@ Route::get('thanh-toan',['as'=>'thanhtoan','uses'=>'HandleController@thanhtoan']
 
 Route::post('thanh-toan',['uses'=>'HandleController@chotdonhang']);
 
-<<<<<<< HEAD
+
 Route::get('/branch', "BranchController@listAllBranchs")->name("branch.list");
 Route::get('/branch/add', "BranchController@showAddForm")->name("branch.add");
 Route::post('/branch/add', "BranchController@createBranch")->name("branch.create");
@@ -92,6 +90,4 @@ Route::post('/category/{id}/edit', "CategoryController@updateCategory")->name("c
 Route::get('/category/{id}/delete', "CategoryController@showDeleteForm")->name("category.deleteForm");
 Route::post('/category/{id}/delete', "CategoryController@deleteCategory")->name("category.delete");
 
-//Route::get('/{id}/branchproduct','HomeController@branchproduct') ->name('branchproduct');
-=======
->>>>>>> f36c4ed2c6bef084834535b2c7181157ed3038eb
+

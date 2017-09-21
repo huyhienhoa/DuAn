@@ -54,10 +54,11 @@
 
 </style>
 @section('content')
-
-
+<script>
+    {{asset('js/SweetAlert')}}
+</script>
 <h1>List thương hiệu</h1>
-<a href="{{route("index")}}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
+<a href="{{route("home")}}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
 <a href="{{route("branch.add")}}" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i> Thêm thương hiệu</a>
 <br><br>
 <table>
@@ -75,14 +76,19 @@
             <td>{{$branch->name}}</td>
             <td style="text-align: center; padding-top: 5px; padding-bottom: 5px"><img src="/images/{{$branch->image}}" width="120px"></td>
             <td style="text-align: center"><a href="{{route("branch.edit", ['id'=> $branch->id])}}"><span class="glyphicon glyphicon-edit btn btn-success"></span></a></td>
-            <td style="text-align: center"><a href="{{route("branch.deleteForm", ['id'=> $branch->id])}}"><span class="glyphicon glyphicon-trash btn btn-danger"></span></a></td>
+{{--            <td style="text-align: center"><a href="{{route("branch.deleteForm", ['id'=> $branch->id])}}"><span class="glyphicon glyphicon-trash btn btn-danger"></span></a></td>--}}
+            <td class="text-center"><span class="glyphicon glyphicon-trash btn btn-danger" id="xoa"></span></td>
         </tr>
     @endforeach
 </table>
-<br><br>
-<a href="{{route("index")}}" class="btn btn-info"><i class="glyphicon glyphicon-home"></i> Trang chủ</a>
-<a href="{{route("branch.add")}}" class="btn btn-danger"><i class="glyphicon glyphicon-plus"></i> Thêm thương hiệu</a>
-<br><br>
 {{--{{$branches->links()}}--}}
-@endsection
 
+@endsection
+<script>
+    $(document).ready(function () {
+        $('#xoa').click(function () {
+            // swal("Oops!", "Something went wrong!", "error");
+            alert('ok');
+        })
+    })
+</script>

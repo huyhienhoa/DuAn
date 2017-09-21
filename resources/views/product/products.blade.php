@@ -1,8 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
 
+    <div class="container">
+        @if(session('alert'))
+            <div class="alert alert-success">
+                {{session('alert')}}
+            </div>
+        @endif
         <div>
             <h2 class="text-center text-danger">Danh sách sản phẩm</h2>
             <div>

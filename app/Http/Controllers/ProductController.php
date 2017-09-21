@@ -73,7 +73,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $product->delete();
 //        $request->session()->flash('success','Đã xóa thành công');
-        return redirect()->action('ProductController@listProduct');
+        return redirect()->action('ProductController@listProduct')->with('alert','Bạn đã xóa thành công !');
     }
 
 

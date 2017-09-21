@@ -152,7 +152,6 @@
         </div>
     </div>
 </div>
-<script src="/js/trangchitiet.js"></script>
 <script src="/js/giohang.js"></script>
 <div id="lienhe"></div>
 @include('layouts.footer')

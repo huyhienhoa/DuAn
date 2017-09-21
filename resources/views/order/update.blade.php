@@ -67,7 +67,7 @@
                                                         <td>{{number_format($product->product->cost,0,',','.')}}</td>
                                                         <td style="width: 100px"><input type="number" min="1" value="{{$product->quantity}}" class="form-control qty">
                                                         </td>
-                                                        <td><span><a class="btn btn-info update" id="{{$product->quantity}}"><i class="glyphicon glyphicon-refresh"></i></a></span><span> </span><span><a href="{{route('xoasanpham',['id'=>$product->quantity])}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></a></span></td>
+                                                        <td><span><a class="btn btn-info update" id="{{$product->quantity}}"><i class="glyphicon glyphicon-refresh"></i> </a></span> <span> </span><span> <a href="{{route('xoasanpham',['id'=>$product->quantity])}}" class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i></a></span></td>
                                                         {{--<td>{{$product->quantity}}</td>--}}
                                                         <td>{{number_format($thanhtien,0,',','.')}}</td>
                                                 </tr>
