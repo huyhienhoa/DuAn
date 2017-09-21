@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Đã Đăng Nhập Thành Công
                 </div>
             </div>
         </div>
